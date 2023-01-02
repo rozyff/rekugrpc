@@ -1,0 +1,15 @@
+syntax = "proto3";
+package payment;
+option go_package = "./payment";
+
+message TotalDepositResponse {
+  double total = 1;
+}
+
+message TotalDepositRequest {
+    int64 user_id = 1;
+}
+
+service PaymentService {
+  rpc GetUserTotalDeposit(TotalDepositRequest) returns (TotalDepositResponse) {}
+}
